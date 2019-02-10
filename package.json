@@ -3,7 +3,7 @@
         "name": "Mailer",
         "url": "https://github.com/aalfiann/swift-modules-mailer",
         "description": "A modules to sending email with SMTP.",
-        "version": "1.0",
+        "version": "1.0.1",
         "require": {
             "swift": "1.0.0"
         },

@@ -25,13 +25,13 @@ class Mailer {
         if(!empty($settings)){
             $c = $settings['smtp'];
             $this->smtpHost = $c['host'];
-            $this->smtpAuth = $c['auth'];
+            $this->smtpAuth = filter_var($c['auth'], FILTER_VALIDATE_BOOLEAN);
             $this->smtpSecure = $c['secure'];
             $this->smtpUsername = $c['username'];
             $this->smtpPassword = $c['password'];
-            $this->smtpPort = $c['port'];
-            $this->smtpAutoTLS = $c['autotls'];
-            $this->smtpDebug = $c['debug'];
+            $this->smtpPort = (int)$c['port'];
+            $this->smtpAutoTLS = filter_var($c['autotls'], FILTER_VALIDATE_BOOLEAN);
+            $this->smtpDebug = (int)$c['debug'];
             $this->defaultNameFrom = $c['defaultnamefrom'];
         }
     }
